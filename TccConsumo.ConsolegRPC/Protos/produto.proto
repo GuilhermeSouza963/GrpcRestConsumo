@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "TccDev.gRPC.Protos";
+
+package Produto;
+
+service ProdutogRPC {
+	rpc Listar (ListarProdutosRequest) returns (stream ListarProdutosResponse);
+}
+
+message DadosProduto {
+  int32 produtoId = 1;
+  string descricao = 2;  
+}
+
+message ListarProdutosRequest{
+
+}
+
+message ListarProdutosResponse {
+  DadosProduto produto = 1;
+}
